@@ -1,0 +1,9 @@
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe.config
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csprojResolveAssemblyReference.cache
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.FormZipArchivator.resources
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Properties.Resources.resources
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csproj.GenerateResource.Cache
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.pdb
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.exe
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.pdb
