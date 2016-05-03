@@ -83,6 +83,26 @@ namespace ZIP_Archivator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_icon {
+            get {
+                object obj = ResourceManager.GetObject("back-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Button_Next_icon16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Button-Next-icon16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_delete_icon {
             get {
                 object obj = ResourceManager.GetObject("edit-delete-icon", resourceCulture);
@@ -96,6 +116,16 @@ namespace ZIP_Archivator.Properties {
         internal static System.Drawing.Bitmap Extract_object_icon {
             get {
                 object obj = ResourceManager.GetObject("Extract-object-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forward_icon {
+            get {
+                object obj = ResourceManager.GetObject("forward-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

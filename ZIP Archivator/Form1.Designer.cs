@@ -33,6 +33,13 @@
             this.commandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxAddress = new System.Windows.Forms.ComboBox();
+            this.labelAddress = new System.Windows.Forms.Label();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.buttonForward = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonGo = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonExtractTo = new System.Windows.Forms.Button();
             this.buttonTest = new System.Windows.Forms.Button();
@@ -40,9 +47,6 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonInfo = new System.Windows.Forms.Button();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -102,6 +106,65 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 74);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // comboBoxAddress
+            // 
+            this.comboBoxAddress.FormattingEnabled = true;
+            this.comboBoxAddress.Location = new System.Drawing.Point(138, 107);
+            this.comboBoxAddress.Name = "comboBoxAddress";
+            this.comboBoxAddress.Size = new System.Drawing.Size(422, 21);
+            this.comboBoxAddress.TabIndex = 2;
+            this.comboBoxAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxAddress_KeyDown);
+            // 
+            // labelAddress
+            // 
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Location = new System.Drawing.Point(87, 110);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(45, 13);
+            this.labelAddress.TabIndex = 3;
+            this.labelAddress.Text = "Address";
+            // 
+            // webBrowser
+            // 
+            this.webBrowser.Location = new System.Drawing.Point(3, 134);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(612, 408);
+            this.webBrowser.TabIndex = 4;
+            // 
+            // buttonForward
+            // 
+            this.buttonForward.Image = global::ZIP_Archivator.Properties.Resources.forward_icon;
+            this.buttonForward.Location = new System.Drawing.Point(44, 105);
+            this.buttonForward.Name = "buttonForward";
+            this.buttonForward.Size = new System.Drawing.Size(35, 23);
+            this.buttonForward.TabIndex = 7;
+            this.buttonForward.UseVisualStyleBackColor = true;
+            this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Image = global::ZIP_Archivator.Properties.Resources.back_icon;
+            this.buttonBack.Location = new System.Drawing.Point(3, 105);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(35, 23);
+            this.buttonBack.TabIndex = 6;
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonGo
+            // 
+            this.buttonGo.Image = global::ZIP_Archivator.Properties.Resources.Button_Next_icon16x16;
+            this.buttonGo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGo.Location = new System.Drawing.Point(566, 107);
+            this.buttonGo.Name = "buttonGo";
+            this.buttonGo.Size = new System.Drawing.Size(49, 23);
+            this.buttonGo.TabIndex = 5;
+            this.buttonGo.Text = "Go";
+            this.buttonGo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonGo.UseVisualStyleBackColor = true;
+            this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
+            // 
             // buttonAdd
             // 
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -114,7 +177,6 @@
             this.buttonAdd.Text = "Add";
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonExtractTo
             // 
@@ -195,24 +257,23 @@
             this.buttonInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonInfo.UseVisualStyleBackColor = true;
             // 
-            // textBoxAddress
-            // 
-            this.textBoxAddress.Location = new System.Drawing.Point(0, 108);
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(536, 20);
-            this.textBoxAddress.TabIndex = 2;
-            // 
             // FormZipArchivator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 480);
-            this.Controls.Add(this.textBoxAddress);
+            this.ClientSize = new System.Drawing.Size(833, 694);
+            this.Controls.Add(this.buttonForward);
+            this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.buttonGo);
+            this.Controls.Add(this.webBrowser);
+            this.Controls.Add(this.labelAddress);
+            this.Controls.Add(this.comboBoxAddress);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormZipArchivator";
             this.Text = "ZIP Archivator";
+            this.Load += new System.EventHandler(this.FormZipArchivator_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -235,9 +296,13 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button buttonInfo;
+        private System.Windows.Forms.ComboBox comboBoxAddress;
+        private System.Windows.Forms.Label labelAddress;
+        private System.Windows.Forms.WebBrowser webBrowser;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.TextBox textBoxAddress;
-        private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private System.Windows.Forms.Button buttonGo;
+        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonForward;
     }
 }
 

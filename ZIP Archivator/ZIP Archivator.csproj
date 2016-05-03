@@ -105,6 +105,15 @@
   <ItemGroup>
     <None Include="icons\Symbols-Info-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Button-Next-icon16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\back-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\forward-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
