@@ -7,3 +7,4 @@ c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archi
 c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.pdb
 c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.exe
 c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.pdb
+c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ArchiveTo.resources

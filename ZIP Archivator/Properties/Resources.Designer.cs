@@ -123,6 +123,16 @@ namespace ZIP_Archivator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap folder_zip_icon {
+            get {
+                object obj = ResourceManager.GetObject("folder-zip-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap forward_icon {
             get {
                 object obj = ResourceManager.GetObject("forward-icon", resourceCulture);
@@ -166,6 +176,16 @@ namespace ZIP_Archivator.Properties {
         internal static System.Drawing.Bitmap Tests_icon {
             get {
                 object obj = ResourceManager.GetObject("Tests-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap up_icon {
+            get {
+                object obj = ResourceManager.GetObject("up-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

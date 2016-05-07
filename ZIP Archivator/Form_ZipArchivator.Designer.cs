@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,10 +38,12 @@
             this.labelAddress = new System.Windows.Forms.Label();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.errorProviderAddress = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonUp = new System.Windows.Forms.Button();
             this.buttonForward = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonGo = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonArchiveTo = new System.Windows.Forms.Button();
             this.buttonExtractTo = new System.Windows.Forms.Button();
             this.buttonTest = new System.Windows.Forms.Button();
             this.buttonView = new System.Windows.Forms.Button();
@@ -49,6 +52,7 @@
             this.buttonInfo = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -92,7 +96,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.buttonAdd, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonArchiveTo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonExtractTo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonTest, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonView, 3, 0);
@@ -108,17 +112,21 @@
             // 
             // comboBoxAddress
             // 
+            this.comboBoxAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBoxAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
             this.comboBoxAddress.FormattingEnabled = true;
-            this.comboBoxAddress.Location = new System.Drawing.Point(138, 107);
+            this.comboBoxAddress.Location = new System.Drawing.Point(193, 107);
             this.comboBoxAddress.Name = "comboBoxAddress";
-            this.comboBoxAddress.Size = new System.Drawing.Size(422, 21);
+            this.comboBoxAddress.Size = new System.Drawing.Size(405, 21);
             this.comboBoxAddress.TabIndex = 2;
+            this.comboBoxAddress.SelectionChangeCommitted += new System.EventHandler(this.comboBoxAddress_SelectionChangeCommitted);
             this.comboBoxAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxAddress_KeyDown);
+            this.comboBoxAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxAddress_KeyPress);
             // 
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(87, 110);
+            this.labelAddress.Location = new System.Drawing.Point(142, 110);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(45, 13);
             this.labelAddress.TabIndex = 3;
@@ -129,8 +137,24 @@
             this.webBrowser.Location = new System.Drawing.Point(3, 134);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(612, 408);
+            this.webBrowser.Size = new System.Drawing.Size(650, 408);
             this.webBrowser.TabIndex = 4;
+            this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
+            // 
+            // errorProviderAddress
+            // 
+            this.errorProviderAddress.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.errorProviderAddress.ContainerControl = this;
+            // 
+            // buttonUp
+            // 
+            this.buttonUp.Image = global::ZIP_Archivator.Properties.Resources.up_icon;
+            this.buttonUp.Location = new System.Drawing.Point(85, 105);
+            this.buttonUp.Name = "buttonUp";
+            this.buttonUp.Size = new System.Drawing.Size(35, 23);
+            this.buttonUp.TabIndex = 8;
+            this.buttonUp.UseVisualStyleBackColor = true;
+            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
             // 
             // buttonForward
             // 
@@ -156,7 +180,7 @@
             // 
             this.buttonGo.Image = global::ZIP_Archivator.Properties.Resources.Button_Next_icon16x16;
             this.buttonGo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGo.Location = new System.Drawing.Point(566, 107);
+            this.buttonGo.Location = new System.Drawing.Point(604, 107);
             this.buttonGo.Name = "buttonGo";
             this.buttonGo.Size = new System.Drawing.Size(49, 23);
             this.buttonGo.TabIndex = 5;
@@ -165,18 +189,19 @@
             this.buttonGo.UseVisualStyleBackColor = true;
             this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
             // 
-            // buttonAdd
+            // buttonArchiveTo
             // 
-            this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonAdd.Image = global::ZIP_Archivator.Properties.Resources.Archive_icon;
-            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonAdd.Location = new System.Drawing.Point(3, 7);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(70, 60);
-            this.buttonAdd.TabIndex = 2;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonArchiveTo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonArchiveTo.Image = global::ZIP_Archivator.Properties.Resources.Archive_icon;
+            this.buttonArchiveTo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonArchiveTo.Location = new System.Drawing.Point(3, 7);
+            this.buttonArchiveTo.Name = "buttonArchiveTo";
+            this.buttonArchiveTo.Size = new System.Drawing.Size(70, 60);
+            this.buttonArchiveTo.TabIndex = 2;
+            this.buttonArchiveTo.Text = "Archive To";
+            this.buttonArchiveTo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonArchiveTo.UseVisualStyleBackColor = true;
+            this.buttonArchiveTo.Click += new System.EventHandler(this.buttonArchiveTo_Click);
             // 
             // buttonExtractTo
             // 
@@ -262,6 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 694);
+            this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonForward);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonGo);
@@ -272,11 +298,13 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormZipArchivator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ZIP Archivator";
             this.Load += new System.EventHandler(this.FormZipArchivator_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,20 +317,22 @@
         private System.Windows.Forms.ToolStripMenuItem commandsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonArchiveTo;
         private System.Windows.Forms.Button buttonExtractTo;
         private System.Windows.Forms.Button buttonTest;
         private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button buttonInfo;
-        private System.Windows.Forms.ComboBox comboBoxAddress;
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.WebBrowser webBrowser;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button buttonGo;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonForward;
+        private System.Windows.Forms.ErrorProvider errorProviderAddress;
+        private System.Windows.Forms.Button buttonUp;
+        public System.Windows.Forms.ComboBox comboBoxAddress;
     }
 }
 

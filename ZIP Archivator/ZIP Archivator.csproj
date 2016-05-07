@@ -47,16 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Form_ArchiveTo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form_ArchiveTo.Designer.cs">
+      <DependentUpon>Form_ArchiveTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ZipArchivator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ZipArchivator.Designer.cs">
+      <DependentUpon>Form_ZipArchivator.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Form_ArchiveTo.resx">
+      <DependentUpon>Form_ArchiveTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ZipArchivator.resx">
+      <DependentUpon>Form_ZipArchivator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -113,6 +122,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\forward-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\up-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\folder-zip-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
