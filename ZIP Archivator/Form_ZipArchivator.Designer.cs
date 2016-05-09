@@ -34,6 +34,13 @@
             this.commandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonArchiveTo = new System.Windows.Forms.Button();
+            this.buttonExtractTo = new System.Windows.Forms.Button();
+            this.buttonTest = new System.Windows.Forms.Button();
+            this.buttonView = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonFind = new System.Windows.Forms.Button();
+            this.buttonInfo = new System.Windows.Forms.Button();
             this.comboBoxAddress = new System.Windows.Forms.ComboBox();
             this.labelAddress = new System.Windows.Forms.Label();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
@@ -43,13 +50,6 @@
             this.buttonForward = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonGo = new System.Windows.Forms.Button();
-            this.buttonArchiveTo = new System.Windows.Forms.Button();
-            this.buttonExtractTo = new System.Windows.Forms.Button();
-            this.buttonTest = new System.Windows.Forms.Button();
-            this.buttonView = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonFind = new System.Windows.Forms.Button();
-            this.buttonInfo = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).BeginInit();
@@ -109,85 +109,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 74);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // comboBoxAddress
-            // 
-            this.comboBoxAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.comboBoxAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
-            this.comboBoxAddress.FormattingEnabled = true;
-            this.comboBoxAddress.Location = new System.Drawing.Point(193, 107);
-            this.comboBoxAddress.Name = "comboBoxAddress";
-            this.comboBoxAddress.Size = new System.Drawing.Size(405, 21);
-            this.comboBoxAddress.TabIndex = 2;
-            this.comboBoxAddress.SelectionChangeCommitted += new System.EventHandler(this.comboBoxAddress_SelectionChangeCommitted);
-            this.comboBoxAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxAddress_KeyDown);
-            this.comboBoxAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxAddress_KeyPress);
-            // 
-            // labelAddress
-            // 
-            this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(142, 110);
-            this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(45, 13);
-            this.labelAddress.TabIndex = 3;
-            this.labelAddress.Text = "Address";
-            // 
-            // webBrowser
-            // 
-            this.webBrowser.Location = new System.Drawing.Point(3, 134);
-            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(650, 408);
-            this.webBrowser.TabIndex = 4;
-            this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
-            // 
-            // errorProviderAddress
-            // 
-            this.errorProviderAddress.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.errorProviderAddress.ContainerControl = this;
-            // 
-            // buttonUp
-            // 
-            this.buttonUp.Image = global::ZIP_Archivator.Properties.Resources.up_icon;
-            this.buttonUp.Location = new System.Drawing.Point(85, 105);
-            this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(35, 23);
-            this.buttonUp.TabIndex = 8;
-            this.buttonUp.UseVisualStyleBackColor = true;
-            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
-            // 
-            // buttonForward
-            // 
-            this.buttonForward.Image = global::ZIP_Archivator.Properties.Resources.forward_icon;
-            this.buttonForward.Location = new System.Drawing.Point(44, 105);
-            this.buttonForward.Name = "buttonForward";
-            this.buttonForward.Size = new System.Drawing.Size(35, 23);
-            this.buttonForward.TabIndex = 7;
-            this.buttonForward.UseVisualStyleBackColor = true;
-            this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
-            // 
-            // buttonBack
-            // 
-            this.buttonBack.Image = global::ZIP_Archivator.Properties.Resources.back_icon;
-            this.buttonBack.Location = new System.Drawing.Point(3, 105);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(35, 23);
-            this.buttonBack.TabIndex = 6;
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
-            // buttonGo
-            // 
-            this.buttonGo.Image = global::ZIP_Archivator.Properties.Resources.Button_Next_icon16x16;
-            this.buttonGo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGo.Location = new System.Drawing.Point(604, 107);
-            this.buttonGo.Name = "buttonGo";
-            this.buttonGo.Size = new System.Drawing.Size(49, 23);
-            this.buttonGo.TabIndex = 5;
-            this.buttonGo.Text = "Go";
-            this.buttonGo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonGo.UseVisualStyleBackColor = true;
-            this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
             // 
             // buttonArchiveTo
             // 
@@ -281,6 +202,85 @@
             this.buttonInfo.Text = "Info";
             this.buttonInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonInfo.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxAddress
+            // 
+            this.comboBoxAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBoxAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
+            this.comboBoxAddress.FormattingEnabled = true;
+            this.comboBoxAddress.Location = new System.Drawing.Point(193, 107);
+            this.comboBoxAddress.Name = "comboBoxAddress";
+            this.comboBoxAddress.Size = new System.Drawing.Size(405, 21);
+            this.comboBoxAddress.TabIndex = 2;
+            this.comboBoxAddress.SelectionChangeCommitted += new System.EventHandler(this.comboBoxAddress_SelectionChangeCommitted);
+            this.comboBoxAddress.TextUpdate += new System.EventHandler(this.comboBoxAddress_TextUpdate);
+            this.comboBoxAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxAddress_KeyDown);
+            // 
+            // labelAddress
+            // 
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Location = new System.Drawing.Point(142, 110);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(45, 13);
+            this.labelAddress.TabIndex = 3;
+            this.labelAddress.Text = "Address";
+            // 
+            // webBrowser
+            // 
+            this.webBrowser.Location = new System.Drawing.Point(3, 134);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(650, 408);
+            this.webBrowser.TabIndex = 4;
+            this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
+            // 
+            // errorProviderAddress
+            // 
+            this.errorProviderAddress.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.errorProviderAddress.ContainerControl = this;
+            // 
+            // buttonUp
+            // 
+            this.buttonUp.Image = global::ZIP_Archivator.Properties.Resources.up_icon;
+            this.buttonUp.Location = new System.Drawing.Point(85, 105);
+            this.buttonUp.Name = "buttonUp";
+            this.buttonUp.Size = new System.Drawing.Size(35, 23);
+            this.buttonUp.TabIndex = 8;
+            this.buttonUp.UseVisualStyleBackColor = true;
+            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
+            // 
+            // buttonForward
+            // 
+            this.buttonForward.Image = global::ZIP_Archivator.Properties.Resources.forward_icon;
+            this.buttonForward.Location = new System.Drawing.Point(44, 105);
+            this.buttonForward.Name = "buttonForward";
+            this.buttonForward.Size = new System.Drawing.Size(35, 23);
+            this.buttonForward.TabIndex = 7;
+            this.buttonForward.UseVisualStyleBackColor = true;
+            this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Image = global::ZIP_Archivator.Properties.Resources.back_icon;
+            this.buttonBack.Location = new System.Drawing.Point(3, 105);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(35, 23);
+            this.buttonBack.TabIndex = 6;
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonGo
+            // 
+            this.buttonGo.Image = global::ZIP_Archivator.Properties.Resources.Button_Next_icon16x16;
+            this.buttonGo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGo.Location = new System.Drawing.Point(604, 107);
+            this.buttonGo.Name = "buttonGo";
+            this.buttonGo.Size = new System.Drawing.Size(49, 23);
+            this.buttonGo.TabIndex = 5;
+            this.buttonGo.Text = "Go";
+            this.buttonGo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonGo.UseVisualStyleBackColor = true;
+            this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
             // 
             // FormZipArchivator
             // 

@@ -15,28 +15,26 @@ namespace ZIP_Archivator
 {
     public partial class FormZipArchivator : Form
     {
+        // Declare variables
         private Form_ArchiveTo formArchiveTo;
+        private Form_ExtractTo formExtractTo;
 
-        public ComboBox ComboBoxAddress
-        {
-            get { return comboBoxAddress; }
-        }
-
+        // Constructor
         public FormZipArchivator()
         {
             InitializeComponent();
         }
 
+        // Form Zip Archivator is loaded
         private void FormZipArchivator_Load(object sender, EventArgs e)
         {
             comboBoxAddress.MaxDropDownItems = 10;
-            //comboBoxAddress.Text = Directory.GetCurrentDirectory();
             comboBoxAddress.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            //Environment.SpecialFolder smth = Environment.SpecialFolder.MyComputer;
-            //comboBoxAddress.Text = (string)Environment.SpecialFolder.MyComputer;
+            //comboBoxAddress.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
             ValidateAndOpenDirectory();
         }
 
+        // Validates and opens specified directory
         private void ValidateAndOpenDirectory()
         {
             if (Directory.Exists(comboBoxAddress.Text))
@@ -51,13 +49,14 @@ namespace ZIP_Archivator
             }
         }
 
-       
+        // "Go" button is clicked
         private void buttonGo_Click(object sender, EventArgs e)
         {
             errorProviderAddress.Clear();
             ValidateAndOpenDirectory();
         }
 
+        // Opens directory if press Enter
         private void comboBoxAddress_KeyDown(object sender, KeyEventArgs e)
         {
             errorProviderAddress.Clear();
@@ -67,6 +66,7 @@ namespace ZIP_Archivator
             }
         }
 
+        // Returns to previous address if Back button clicked
         private void buttonBack_Click(object sender, EventArgs e)
         {
             errorProviderAddress.Clear();
@@ -76,6 +76,7 @@ namespace ZIP_Archivator
             }
         }
 
+        // Goes forward address after back is used
         private void buttonForward_Click(object sender, EventArgs e)
         {
             errorProviderAddress.Clear();
@@ -85,29 +86,28 @@ namespace ZIP_Archivator
             }
         }
 
-        private void comboBoxAddress_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            errorProviderAddress.Clear();
-        }
-
+        // Goes to folder UP
         private void buttonUp_Click(object sender, EventArgs e)
         {
             comboBoxAddress.Text = Path.GetFullPath(Path.Combine(webBrowser.Url.LocalPath, @"..\"));
             ValidateAndOpenDirectory();
         }
 
+        // writes address if web browser changed navigation
         private void webBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             comboBoxAddress.Text = webBrowser.Url.LocalPath;
             ValidateAndAddItemToComboBoxAddress();
         }
 
+        // opens paths from Drop-Down list of Adress
         private void comboBoxAddress_SelectionChangeCommitted(object sender, EventArgs e)
         {
             comboBoxAddress.Text = (string) comboBoxAddress.SelectedItem;
             ValidateAndOpenDirectory();
         }
 
+        // Validates and adds Item to Address (like history of visited addresses)
         private void ValidateAndAddItemToComboBoxAddress()
         {
             if (!comboBoxAddress.Items.Contains(webBrowser.Url.LocalPath))
@@ -116,11 +116,18 @@ namespace ZIP_Archivator
             }
         }
 
+        // button Archive is clicked
         private void buttonArchiveTo_Click(object sender, EventArgs e)
         {
             formArchiveTo = new Form_ArchiveTo();
             formArchiveTo.comboBoxFolder.Text = comboBoxAddress.Text;
             formArchiveTo.ShowDialog();
+        }
+
+        // clear error if Address is updated.
+        private void comboBoxAddress_TextUpdate(object sender, EventArgs e)
+        {
+            errorProviderAddress.Clear();
         }
     }
 }
