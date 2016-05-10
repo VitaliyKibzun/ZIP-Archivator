@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroupFolders", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroupFiles", System.Windows.Forms.HorizontalAlignment.Left);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +52,10 @@
             this.buttonForward = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonGo = new System.Windows.Forms.Button();
+            this.imageListFiles = new System.Windows.Forms.ImageList(this.components);
+            this.listViewFiles = new System.Windows.Forms.ListView();
+            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddress)).BeginInit();
@@ -230,7 +236,7 @@
             this.webBrowser.Location = new System.Drawing.Point(3, 134);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(650, 408);
+            this.webBrowser.Size = new System.Drawing.Size(650, 234);
             this.webBrowser.TabIndex = 4;
             this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
             // 
@@ -282,11 +288,53 @@
             this.buttonGo.UseVisualStyleBackColor = true;
             this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
             // 
+            // imageListFiles
+            // 
+            this.imageListFiles.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageListFiles.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageListFiles.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // listViewFiles
+            // 
+            this.listViewFiles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName,
+            this.columnHeaderSize});
+            this.listViewFiles.FullRowSelect = true;
+            listViewGroup1.Header = "ListViewGroupFolders";
+            listViewGroup1.Name = "Folders";
+            listViewGroup2.Header = "ListViewGroupFiles";
+            listViewGroup2.Name = "listViewGroupFiles";
+            this.listViewFiles.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1,
+            listViewGroup2});
+            this.listViewFiles.Location = new System.Drawing.Point(3, 374);
+            this.listViewFiles.Name = "listViewFiles";
+            this.listViewFiles.Size = new System.Drawing.Size(650, 308);
+            this.listViewFiles.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listViewFiles.TabIndex = 10;
+            this.listViewFiles.UseCompatibleStateImageBehavior = false;
+            this.listViewFiles.View = System.Windows.Forms.View.Details;
+            this.listViewFiles.ItemActivate += new System.EventHandler(this.listViewFiles_ItemActivate);
+            this.listViewFiles.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listViewFiles_ItemCheck);
+            this.listViewFiles.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listViewFiles_ItemChecked);
+            this.listViewFiles.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewFiles_ItemSelectionChanged);
+            this.listViewFiles.SelectedIndexChanged += new System.EventHandler(this.listViewFiles_SelectedIndexChanged);
+            // 
+            // columnHeaderName
+            // 
+            this.columnHeaderName.Text = "Name";
+            this.columnHeaderName.Width = 150;
+            // 
+            // columnHeaderSize
+            // 
+            this.columnHeaderSize.Text = "Size";
+            // 
             // FormZipArchivator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 694);
+            this.Controls.Add(this.listViewFiles);
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonForward);
             this.Controls.Add(this.buttonBack);
@@ -333,6 +381,10 @@
         private System.Windows.Forms.ErrorProvider errorProviderAddress;
         private System.Windows.Forms.Button buttonUp;
         public System.Windows.Forms.ComboBox comboBoxAddress;
+        private System.Windows.Forms.ListView listViewFiles;
+        private System.Windows.Forms.ImageList imageListFiles;
+        private System.Windows.Forms.ColumnHeader columnHeaderName;
+        private System.Windows.Forms.ColumnHeader columnHeaderSize;
     }
 }
 

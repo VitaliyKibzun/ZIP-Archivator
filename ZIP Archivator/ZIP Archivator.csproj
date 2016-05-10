@@ -32,6 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -47,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_ExtractTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ExtractTo.Designer.cs">
+      <DependentUpon>Form_ExtractTo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ArchiveTo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_ExtractTo.resx">
+      <DependentUpon>Form_ExtractTo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ArchiveTo.resx">
       <DependentUpon>Form_ArchiveTo.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\folder-zip-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\Extract-object-icon 72x72.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

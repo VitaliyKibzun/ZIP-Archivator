@@ -80,7 +80,7 @@
             this.buttonExtract.Text = "Extract";
             this.buttonExtract.UseVisualStyleBackColor = true;
             // 
-            // ExtractTo
+            // Form_ExtractTo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,11 +93,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ExtractTo";
+            this.Name = "Form_ExtractTo";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Extract To...";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Form_ExtractTo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

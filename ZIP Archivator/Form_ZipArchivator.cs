@@ -11,6 +11,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Net.Configuration;
 
+
 namespace ZIP_Archivator
 {
     public partial class FormZipArchivator : Form
@@ -18,6 +19,7 @@ namespace ZIP_Archivator
         // Declare variables
         private Form_ArchiveTo formArchiveTo;
         private Form_ExtractTo formExtractTo;
+        List<string> listFiles = new List<string>(); 
 
         // Constructor
         public FormZipArchivator()
@@ -28,10 +30,30 @@ namespace ZIP_Archivator
         // Form Zip Archivator is loaded
         private void FormZipArchivator_Load(object sender, EventArgs e)
         {
+            listFiles.Clear();
+            listViewFiles.Items.Clear();
             comboBoxAddress.MaxDropDownItems = 10;
             comboBoxAddress.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             //comboBoxAddress.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
             ValidateAndOpenDirectory();
+            foreach (string item in Directory.GetFileSystemEntries(comboBoxAddress.Text))
+            {
+                //imageListFiles.Images.Add(System.Drawing.Icon.ExtractAssociatedIcon(item));
+                FileInfo fileInfo = new FileInfo(item);
+                ListViewItem lvi = new ListViewItem(Path.GetFileName(item));
+               // lvi.SubItems.Add(fileInfo.Length(item));
+                
+
+                listFiles.Add(item);
+                listViewFiles.Items.Add(Path.GetFileName(item));
+                
+
+                
+                
+                //listFiles.Add(fileInfo.FullName);
+                //listViewFiles.Items.Add(fileInfo.Name, imageListFiles.Images.Count - 1);
+            }
+
         }
 
         // Validates and opens specified directory
@@ -116,9 +138,11 @@ namespace ZIP_Archivator
             }
         }
 
-        // button Archive is clicked
+        // button ArchiveTo is clicked
         private void buttonArchiveTo_Click(object sender, EventArgs e)
         {
+            // returns selected items
+            ListView.SelectedListViewItemCollection selectedFiles = this.listViewFiles.SelectedItems;
             formArchiveTo = new Form_ArchiveTo();
             formArchiveTo.comboBoxFolder.Text = comboBoxAddress.Text;
             formArchiveTo.ShowDialog();
@@ -128,6 +152,31 @@ namespace ZIP_Archivator
         private void comboBoxAddress_TextUpdate(object sender, EventArgs e)
         {
             errorProviderAddress.Clear();
+        }
+
+        private void listViewFiles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewFiles_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void listViewFiles_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+
+        }
+
+        private void listViewFiles_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+
+        }
+
+        private void listViewFiles_ItemActivate(object sender, EventArgs e)
+        {
+
         }
     }
 }

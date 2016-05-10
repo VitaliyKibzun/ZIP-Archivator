@@ -16,5 +16,10 @@ namespace ZIP_Archivator
         {
             InitializeComponent();
         }
+
+        private void Form_ExtractTo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
