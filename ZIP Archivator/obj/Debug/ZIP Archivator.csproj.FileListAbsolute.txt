@@ -9,3 +9,16 @@ c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archi
 c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.pdb
 c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ArchiveTo.resources
 C:\Users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ExtractTo.resources
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe.config
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.pdb
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\Ionic.Zip.dll
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csprojResolveAssemblyReference.cache
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ExtractTo.resources
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ArchiveTo.resources
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.FormZipArchivator.resources
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Properties.Resources.resources
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csproj.GenerateResource.Cache
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.exe
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.pdb
+e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\Ionic.Zlib.dll

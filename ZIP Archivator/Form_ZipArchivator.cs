@@ -33,8 +33,8 @@ namespace ZIP_Archivator
             listFiles.Clear();
             listViewFiles.Items.Clear();
             comboBoxAddress.MaxDropDownItems = 10;
-            comboBoxAddress.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            //comboBoxAddress.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
+            //comboBoxAddress.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            comboBoxAddress.Text = @"e:\temp\";
             ValidateAndOpenDirectory();
             foreach (string item in Directory.GetFileSystemEntries(comboBoxAddress.Text))
             {
@@ -142,10 +142,38 @@ namespace ZIP_Archivator
         private void buttonArchiveTo_Click(object sender, EventArgs e)
         {
             // returns selected items
-            ListView.SelectedListViewItemCollection selectedFiles = this.listViewFiles.SelectedItems;
+           // ListView.SelectedListViewItemCollection selectedFiles = this.listViewFiles.SelectedItems;
+           
             formArchiveTo = new Form_ArchiveTo();
-            formArchiveTo.comboBoxFolder.Text = comboBoxAddress.Text;
-            formArchiveTo.ShowDialog();
+
+            formArchiveTo.comboBoxFolder.Text = comboBoxAddress.Text +"\\"+ new DirectoryInfo(comboBoxAddress.Text).Name+".zip";
+           
+
+
+            //LeonidC: Block Code Start --->
+            //Get Selected Items from ViewList
+
+                    // string[] selectedFiles = new string[this.listViewFiles.SelectedItems.Count];
+            List<string> selectedFilesList=new List<string>();
+            
+            int index = -1;
+            foreach (ListViewItem item in this.listViewFiles.SelectedItems)
+            {
+                index++;
+                    //selectedFiles[index] = item.Text;
+
+                selectedFilesList.Add(comboBoxAddress.Text+"\\"+item.Text);
+                    //MessageBox.Show(selectedFiles[index]);
+            }
+            ArchParameters.ItemsToArchive = selectedFilesList;
+
+            // LeonidC: <---Block Code End
+            if (index == -1) 
+                    MessageBox.Show("No any files are selected!!! \n Please select files to arcive!!!");
+            else 
+                //Show dialog if any item selected:
+                    formArchiveTo.ShowDialog();
+
         }
 
         // clear error if Address is updated.
@@ -178,5 +206,58 @@ namespace ZIP_Archivator
         {
 
         }
+
+        private void buttonInfo_Click(object sender, EventArgs e)
+        {
+            //string selectedFiles = "";
+
+            //foreach (ListViewItem item in this.listViewFiles.SelectedItems)
+            //{
+              
+            //    selectedFiles = selectedFiles + "\n" + item.Text;
+            //}
+            
+            //MessageBox.Show(selectedFiles);
+
+
+//************************************************
+
+            
+
+           
+
+            
+        }
+
+        private void buttonExtractTo_Click(object sender, EventArgs e)
+        {
+
+            if (listViewFiles.SelectedItems.Count > 0 )
+            {
+                
+                MessageBox.Show(listViewFiles.FocusedItem.Text);
+
+                formExtractTo = new Form_ExtractTo();
+                formExtractTo.comboBox1.Text = this.comboBoxAddress.Text;
+
+                ArchParameters.ArchivePathToExtract = this.comboBoxAddress.Text;
+                ArchParameters.ArchiveFileToExtract =this.comboBoxAddress.Text+"\\"+listViewFiles.FocusedItem.Text;
+                
+                formExtractTo.ShowDialog();
+                
+
+            }
+            else
+                MessageBox.Show("Please select archive to extract");
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+      
+
+      
     }
 }

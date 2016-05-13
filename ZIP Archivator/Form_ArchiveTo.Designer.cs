@@ -41,6 +41,10 @@
             this.errorProviderArchiveButton = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderChangeFolderButton = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBoxStatus = new System.Windows.Forms.PictureBox();
+            this.includeFullPath = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderArchiveButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderChangeFolderButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStatus)).BeginInit();
@@ -53,17 +57,20 @@
             // labelZipPath
             // 
             this.labelZipPath.AutoSize = true;
-            this.labelZipPath.Location = new System.Drawing.Point(13, 13);
+            this.labelZipPath.Location = new System.Drawing.Point(17, 16);
+            this.labelZipPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelZipPath.Name = "labelZipPath";
-            this.labelZipPath.Size = new System.Drawing.Size(39, 13);
+            this.labelZipPath.Size = new System.Drawing.Size(75, 17);
             this.labelZipPath.TabIndex = 1;
-            this.labelZipPath.Text = "Folder:";
+            this.labelZipPath.Text = "File Name:";
+            this.labelZipPath.Click += new System.EventHandler(this.labelZipPath_Click);
             // 
             // buttonChangeFolder
             // 
-            this.buttonChangeFolder.Location = new System.Drawing.Point(379, 29);
+            this.buttonChangeFolder.Location = new System.Drawing.Point(505, 36);
+            this.buttonChangeFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonChangeFolder.Name = "buttonChangeFolder";
-            this.buttonChangeFolder.Size = new System.Drawing.Size(90, 23);
+            this.buttonChangeFolder.Size = new System.Drawing.Size(120, 28);
             this.buttonChangeFolder.TabIndex = 2;
             this.buttonChangeFolder.Text = "Change Folder";
             this.buttonChangeFolder.UseVisualStyleBackColor = true;
@@ -72,26 +79,31 @@
             // labelZipFileName
             // 
             this.labelZipFileName.AutoSize = true;
-            this.labelZipFileName.Location = new System.Drawing.Point(13, 57);
+            this.labelZipFileName.Location = new System.Drawing.Point(482, 291);
+            this.labelZipFileName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelZipFileName.Name = "labelZipFileName";
-            this.labelZipFileName.Size = new System.Drawing.Size(57, 13);
+            this.labelZipFileName.Size = new System.Drawing.Size(75, 17);
             this.labelZipFileName.TabIndex = 3;
             this.labelZipFileName.Text = "File Name:";
+            this.labelZipFileName.Visible = false;
             // 
             // comboBoxFolder
             // 
             this.comboBoxFolder.FormattingEnabled = true;
-            this.comboBoxFolder.Location = new System.Drawing.Point(16, 30);
+            this.comboBoxFolder.Location = new System.Drawing.Point(21, 37);
+            this.comboBoxFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxFolder.Name = "comboBoxFolder";
-            this.comboBoxFolder.Size = new System.Drawing.Size(357, 21);
+            this.comboBoxFolder.Size = new System.Drawing.Size(475, 24);
             this.comboBoxFolder.TabIndex = 4;
+            this.comboBoxFolder.SelectedIndexChanged += new System.EventHandler(this.comboBoxFolder_SelectedIndexChanged);
             this.comboBoxFolder.TextUpdate += new System.EventHandler(this.comboBoxFolder_TextUpdate);
             // 
             // buttonArchive
             // 
-            this.buttonArchive.Location = new System.Drawing.Point(379, 72);
+            this.buttonArchive.Location = new System.Drawing.Point(459, 266);
+            this.buttonArchive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonArchive.Name = "buttonArchive";
-            this.buttonArchive.Size = new System.Drawing.Size(90, 23);
+            this.buttonArchive.Size = new System.Drawing.Size(120, 28);
             this.buttonArchive.TabIndex = 6;
             this.buttonArchive.TabStop = false;
             this.buttonArchive.Text = "Archive";
@@ -101,20 +113,26 @@
             // comboBoxFileName
             // 
             this.comboBoxFileName.FormattingEnabled = true;
-            this.comboBoxFileName.Location = new System.Drawing.Point(16, 73);
+            this.comboBoxFileName.Location = new System.Drawing.Point(0, 291);
+            this.comboBoxFileName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxFileName.Name = "comboBoxFileName";
-            this.comboBoxFileName.Size = new System.Drawing.Size(328, 21);
+            this.comboBoxFileName.Size = new System.Drawing.Size(436, 24);
             this.comboBoxFileName.TabIndex = 7;
+            this.comboBoxFileName.Text = "test.zip";
+            this.comboBoxFileName.Visible = false;
+            this.comboBoxFileName.SelectedIndexChanged += new System.EventHandler(this.comboBoxFileName_SelectedIndexChanged);
             this.comboBoxFileName.TextUpdate += new System.EventHandler(this.comboBoxFileName_TextUpdate);
             // 
             // labelExtension
             // 
             this.labelExtension.AutoSize = true;
-            this.labelExtension.Location = new System.Drawing.Point(350, 77);
+            this.labelExtension.Location = new System.Drawing.Point(444, 298);
+            this.labelExtension.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelExtension.Name = "labelExtension";
-            this.labelExtension.Size = new System.Drawing.Size(23, 13);
+            this.labelExtension.Size = new System.Drawing.Size(30, 17);
             this.labelExtension.TabIndex = 9;
             this.labelExtension.Text = ".zip";
+            this.labelExtension.Visible = false;
             // 
             // imageList1
             // 
@@ -133,18 +151,59 @@
             // pictureBoxStatus
             // 
             this.pictureBoxStatus.Image = global::ZIP_Archivator.Properties.Resources.folder_zip_icon;
-            this.pictureBoxStatus.Location = new System.Drawing.Point(482, 25);
+            this.pictureBoxStatus.Location = new System.Drawing.Point(643, 31);
+            this.pictureBoxStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxStatus.Name = "pictureBoxStatus";
-            this.pictureBoxStatus.Size = new System.Drawing.Size(72, 72);
+            this.pictureBoxStatus.Size = new System.Drawing.Size(96, 89);
             this.pictureBoxStatus.TabIndex = 10;
             this.pictureBoxStatus.TabStop = false;
+            // 
+            // includeFullPath
+            // 
+            this.includeFullPath.AutoSize = true;
+            this.includeFullPath.Location = new System.Drawing.Point(21, 139);
+            this.includeFullPath.Name = "includeFullPath";
+            this.includeFullPath.Size = new System.Drawing.Size(129, 21);
+            this.includeFullPath.TabIndex = 11;
+            this.includeFullPath.Text = "Include full path";
+            this.includeFullPath.UseVisualStyleBackColor = true;
+            this.includeFullPath.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(185, 139);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(98, 21);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "zip";
+            this.saveFileDialog1.Filter = "Zip files|*.zip";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(587, 266);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 27);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_ArchiveTo
             // 
             this.AcceptButton = this.buttonArchive;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 115);
+            this.ClientSize = new System.Drawing.Size(757, 316);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.includeFullPath);
             this.Controls.Add(this.pictureBoxStatus);
             this.Controls.Add(this.labelExtension);
             this.Controls.Add(this.comboBoxFileName);
@@ -154,6 +213,7 @@
             this.Controls.Add(this.buttonChangeFolder);
             this.Controls.Add(this.labelZipPath);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_ArchiveTo";
@@ -184,5 +244,9 @@
         public System.Windows.Forms.ComboBox comboBoxFolder;
         private System.Windows.Forms.ErrorProvider errorProviderArchiveButton;
         private System.Windows.Forms.ErrorProvider errorProviderChangeFolderButton;
+        private System.Windows.Forms.CheckBox includeFullPath;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button button1;
     }
 }

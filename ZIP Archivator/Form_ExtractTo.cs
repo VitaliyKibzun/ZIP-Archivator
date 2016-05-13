@@ -19,7 +19,30 @@ namespace ZIP_Archivator
 
         private void Form_ExtractTo_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void buttonChangeFolder_Click(object sender, EventArgs e)
+        {
+            //OpenFileDialog openDoialog = new OpenFileDialog();
+            FolderBrowserDialog folderBrowserDlg = new FolderBrowserDialog();
+            //folderBrowserDlg.ShowDialog();
+            DialogResult DlgResult = folderBrowserDlg.ShowDialog();
+            if (DlgResult==DialogResult.OK)
+            {
+                MessageBox.Show(folderBrowserDlg.SelectedPath);
+                
+            }
+        }
+
+        private void buttonExtract_Click(object sender, EventArgs e)
+        {
+            ArchivingActions.ArchExtract(ArchParameters.ArchiveFileToExtract, ArchParameters.ArchivePathToExtract);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

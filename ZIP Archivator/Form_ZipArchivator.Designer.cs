@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroupFolders", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroupFiles", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroupFolders", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroupFiles", System.Windows.Forms.HorizontalAlignment.Left);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,38 +69,40 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(833, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(881, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // commandsToolStripMenuItem
             // 
             this.commandsToolStripMenuItem.Name = "commandsToolStripMenuItem";
-            this.commandsToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.commandsToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.commandsToolStripMenuItem.Text = "Commands";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.buttonArchiveTo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonExtractTo, 1, 0);
@@ -109,11 +111,12 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonDelete, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonFind, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonInfo, 6, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 27);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 33);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 74);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1108, 91);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // buttonArchiveTo
@@ -121,9 +124,10 @@
             this.buttonArchiveTo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonArchiveTo.Image = global::ZIP_Archivator.Properties.Resources.Archive_icon;
             this.buttonArchiveTo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonArchiveTo.Location = new System.Drawing.Point(3, 7);
+            this.buttonArchiveTo.Location = new System.Drawing.Point(4, 8);
+            this.buttonArchiveTo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonArchiveTo.Name = "buttonArchiveTo";
-            this.buttonArchiveTo.Size = new System.Drawing.Size(70, 60);
+            this.buttonArchiveTo.Size = new System.Drawing.Size(93, 74);
             this.buttonArchiveTo.TabIndex = 2;
             this.buttonArchiveTo.Text = "Archive To";
             this.buttonArchiveTo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -135,23 +139,26 @@
             this.buttonExtractTo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonExtractTo.Image = global::ZIP_Archivator.Properties.Resources.Extract_object_icon;
             this.buttonExtractTo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonExtractTo.Location = new System.Drawing.Point(79, 7);
+            this.buttonExtractTo.Location = new System.Drawing.Point(105, 8);
+            this.buttonExtractTo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExtractTo.Name = "buttonExtractTo";
-            this.buttonExtractTo.Size = new System.Drawing.Size(70, 60);
+            this.buttonExtractTo.Size = new System.Drawing.Size(93, 74);
             this.buttonExtractTo.TabIndex = 3;
             this.buttonExtractTo.TabStop = false;
             this.buttonExtractTo.Text = "Extract To";
             this.buttonExtractTo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonExtractTo.UseVisualStyleBackColor = true;
+            this.buttonExtractTo.Click += new System.EventHandler(this.buttonExtractTo_Click);
             // 
             // buttonTest
             // 
             this.buttonTest.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonTest.Image = global::ZIP_Archivator.Properties.Resources.Tests_icon;
             this.buttonTest.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonTest.Location = new System.Drawing.Point(155, 7);
+            this.buttonTest.Location = new System.Drawing.Point(206, 8);
+            this.buttonTest.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTest.Name = "buttonTest";
-            this.buttonTest.Size = new System.Drawing.Size(70, 60);
+            this.buttonTest.Size = new System.Drawing.Size(93, 74);
             this.buttonTest.TabIndex = 4;
             this.buttonTest.Text = "Test";
             this.buttonTest.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -162,9 +169,10 @@
             this.buttonView.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonView.Image = global::ZIP_Archivator.Properties.Resources.search_icon;
             this.buttonView.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonView.Location = new System.Drawing.Point(231, 7);
+            this.buttonView.Location = new System.Drawing.Point(307, 8);
+            this.buttonView.Margin = new System.Windows.Forms.Padding(4);
             this.buttonView.Name = "buttonView";
-            this.buttonView.Size = new System.Drawing.Size(70, 60);
+            this.buttonView.Size = new System.Drawing.Size(93, 74);
             this.buttonView.TabIndex = 5;
             this.buttonView.Text = "View";
             this.buttonView.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -175,9 +183,10 @@
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonDelete.Image = global::ZIP_Archivator.Properties.Resources.edit_delete_icon;
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonDelete.Location = new System.Drawing.Point(307, 7);
+            this.buttonDelete.Location = new System.Drawing.Point(408, 8);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(70, 60);
+            this.buttonDelete.Size = new System.Drawing.Size(93, 74);
             this.buttonDelete.TabIndex = 6;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -188,9 +197,10 @@
             this.buttonFind.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonFind.Image = global::ZIP_Archivator.Properties.Resources.Symbols_Find_icon;
             this.buttonFind.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonFind.Location = new System.Drawing.Point(383, 7);
+            this.buttonFind.Location = new System.Drawing.Point(509, 8);
+            this.buttonFind.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFind.Name = "buttonFind";
-            this.buttonFind.Size = new System.Drawing.Size(70, 60);
+            this.buttonFind.Size = new System.Drawing.Size(93, 74);
             this.buttonFind.TabIndex = 7;
             this.buttonFind.Text = "Find";
             this.buttonFind.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -201,22 +211,25 @@
             this.buttonInfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonInfo.Image = global::ZIP_Archivator.Properties.Resources.Symbols_Info_icon;
             this.buttonInfo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonInfo.Location = new System.Drawing.Point(459, 7);
+            this.buttonInfo.Location = new System.Drawing.Point(610, 8);
+            this.buttonInfo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonInfo.Name = "buttonInfo";
-            this.buttonInfo.Size = new System.Drawing.Size(70, 60);
+            this.buttonInfo.Size = new System.Drawing.Size(93, 74);
             this.buttonInfo.TabIndex = 8;
             this.buttonInfo.Text = "Info";
             this.buttonInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonInfo.UseVisualStyleBackColor = true;
+            this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
             // 
             // comboBoxAddress
             // 
             this.comboBoxAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.comboBoxAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
             this.comboBoxAddress.FormattingEnabled = true;
-            this.comboBoxAddress.Location = new System.Drawing.Point(193, 107);
+            this.comboBoxAddress.Location = new System.Drawing.Point(257, 132);
+            this.comboBoxAddress.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAddress.Name = "comboBoxAddress";
-            this.comboBoxAddress.Size = new System.Drawing.Size(405, 21);
+            this.comboBoxAddress.Size = new System.Drawing.Size(539, 24);
             this.comboBoxAddress.TabIndex = 2;
             this.comboBoxAddress.SelectionChangeCommitted += new System.EventHandler(this.comboBoxAddress_SelectionChangeCommitted);
             this.comboBoxAddress.TextUpdate += new System.EventHandler(this.comboBoxAddress_TextUpdate);
@@ -225,18 +238,20 @@
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Location = new System.Drawing.Point(142, 110);
+            this.labelAddress.Location = new System.Drawing.Point(189, 135);
+            this.labelAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(45, 13);
+            this.labelAddress.Size = new System.Drawing.Size(60, 17);
             this.labelAddress.TabIndex = 3;
             this.labelAddress.Text = "Address";
             // 
             // webBrowser
             // 
-            this.webBrowser.Location = new System.Drawing.Point(3, 134);
-            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Location = new System.Drawing.Point(4, 165);
+            this.webBrowser.Margin = new System.Windows.Forms.Padding(4);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(27, 25);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(650, 234);
+            this.webBrowser.Size = new System.Drawing.Size(47, 35);
             this.webBrowser.TabIndex = 4;
             this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
             // 
@@ -248,9 +263,10 @@
             // buttonUp
             // 
             this.buttonUp.Image = global::ZIP_Archivator.Properties.Resources.up_icon;
-            this.buttonUp.Location = new System.Drawing.Point(85, 105);
+            this.buttonUp.Location = new System.Drawing.Point(113, 129);
+            this.buttonUp.Margin = new System.Windows.Forms.Padding(4);
             this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(35, 23);
+            this.buttonUp.Size = new System.Drawing.Size(47, 28);
             this.buttonUp.TabIndex = 8;
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
@@ -258,9 +274,10 @@
             // buttonForward
             // 
             this.buttonForward.Image = global::ZIP_Archivator.Properties.Resources.forward_icon;
-            this.buttonForward.Location = new System.Drawing.Point(44, 105);
+            this.buttonForward.Location = new System.Drawing.Point(59, 129);
+            this.buttonForward.Margin = new System.Windows.Forms.Padding(4);
             this.buttonForward.Name = "buttonForward";
-            this.buttonForward.Size = new System.Drawing.Size(35, 23);
+            this.buttonForward.Size = new System.Drawing.Size(47, 28);
             this.buttonForward.TabIndex = 7;
             this.buttonForward.UseVisualStyleBackColor = true;
             this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
@@ -268,9 +285,10 @@
             // buttonBack
             // 
             this.buttonBack.Image = global::ZIP_Archivator.Properties.Resources.back_icon;
-            this.buttonBack.Location = new System.Drawing.Point(3, 105);
+            this.buttonBack.Location = new System.Drawing.Point(4, 129);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(35, 23);
+            this.buttonBack.Size = new System.Drawing.Size(47, 28);
             this.buttonBack.TabIndex = 6;
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
@@ -279,9 +297,10 @@
             // 
             this.buttonGo.Image = global::ZIP_Archivator.Properties.Resources.Button_Next_icon16x16;
             this.buttonGo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGo.Location = new System.Drawing.Point(604, 107);
+            this.buttonGo.Location = new System.Drawing.Point(805, 132);
+            this.buttonGo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGo.Name = "buttonGo";
-            this.buttonGo.Size = new System.Drawing.Size(49, 23);
+            this.buttonGo.Size = new System.Drawing.Size(65, 28);
             this.buttonGo.TabIndex = 5;
             this.buttonGo.Text = "Go";
             this.buttonGo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -300,16 +319,17 @@
             this.columnHeaderName,
             this.columnHeaderSize});
             this.listViewFiles.FullRowSelect = true;
-            listViewGroup1.Header = "ListViewGroupFolders";
-            listViewGroup1.Name = "Folders";
-            listViewGroup2.Header = "ListViewGroupFiles";
-            listViewGroup2.Name = "listViewGroupFiles";
+            listViewGroup3.Header = "ListViewGroupFolders";
+            listViewGroup3.Name = "Folders";
+            listViewGroup4.Header = "ListViewGroupFiles";
+            listViewGroup4.Name = "listViewGroupFiles";
             this.listViewFiles.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
-            this.listViewFiles.Location = new System.Drawing.Point(3, 374);
+            listViewGroup3,
+            listViewGroup4});
+            this.listViewFiles.Location = new System.Drawing.Point(5, 164);
+            this.listViewFiles.Margin = new System.Windows.Forms.Padding(4);
             this.listViewFiles.Name = "listViewFiles";
-            this.listViewFiles.Size = new System.Drawing.Size(650, 308);
+            this.listViewFiles.Size = new System.Drawing.Size(865, 378);
             this.listViewFiles.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewFiles.TabIndex = 10;
             this.listViewFiles.UseCompatibleStateImageBehavior = false;
@@ -331,9 +351,9 @@
             // 
             // FormZipArchivator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 694);
+            this.ClientSize = new System.Drawing.Size(881, 558);
             this.Controls.Add(this.listViewFiles);
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonForward);
@@ -345,6 +365,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormZipArchivator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ZIP Archivator";
@@ -366,7 +387,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button buttonArchiveTo;
-        private System.Windows.Forms.Button buttonExtractTo;
         private System.Windows.Forms.Button buttonTest;
         private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.Button buttonDelete;
@@ -385,6 +405,7 @@
         private System.Windows.Forms.ImageList imageListFiles;
         private System.Windows.Forms.ColumnHeader columnHeaderName;
         private System.Windows.Forms.ColumnHeader columnHeaderSize;
+        public System.Windows.Forms.Button buttonExtractTo;
     }
 }
 

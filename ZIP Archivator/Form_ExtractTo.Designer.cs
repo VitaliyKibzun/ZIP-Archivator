@@ -33,71 +33,114 @@
             this.buttonChangeFolder = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonExtract = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelExtractTo
             // 
             this.labelExtractTo.AutoSize = true;
-            this.labelExtractTo.Location = new System.Drawing.Point(13, 13);
+            this.labelExtractTo.Location = new System.Drawing.Point(17, 16);
+            this.labelExtractTo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelExtractTo.Name = "labelExtractTo";
-            this.labelExtractTo.Size = new System.Drawing.Size(36, 13);
+            this.labelExtractTo.Size = new System.Drawing.Size(48, 17);
             this.labelExtractTo.TabIndex = 0;
             this.labelExtractTo.Text = "Folder";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 30);
+            this.comboBox1.Location = new System.Drawing.Point(21, 37);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(357, 21);
+            this.comboBox1.Size = new System.Drawing.Size(475, 24);
             this.comboBox1.TabIndex = 1;
             // 
             // buttonChangeFolder
             // 
-            this.buttonChangeFolder.Location = new System.Drawing.Point(379, 29);
+            this.buttonChangeFolder.Location = new System.Drawing.Point(505, 36);
+            this.buttonChangeFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonChangeFolder.Name = "buttonChangeFolder";
-            this.buttonChangeFolder.Size = new System.Drawing.Size(90, 23);
+            this.buttonChangeFolder.Size = new System.Drawing.Size(120, 28);
             this.buttonChangeFolder.TabIndex = 2;
             this.buttonChangeFolder.Text = "Change Folder";
             this.buttonChangeFolder.UseVisualStyleBackColor = true;
+            this.buttonChangeFolder.Click += new System.EventHandler(this.buttonChangeFolder_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ZIP_Archivator.Properties.Resources.Extract_object_icon_72x72;
-            this.pictureBox1.Location = new System.Drawing.Point(482, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(649, 29);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 72);
+            this.pictureBox1.Size = new System.Drawing.Size(96, 89);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // buttonExtract
             // 
-            this.buttonExtract.Location = new System.Drawing.Point(379, 73);
+            this.buttonExtract.Location = new System.Drawing.Point(364, 90);
+            this.buttonExtract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonExtract.Name = "buttonExtract";
-            this.buttonExtract.Size = new System.Drawing.Size(90, 23);
+            this.buttonExtract.Size = new System.Drawing.Size(120, 28);
             this.buttonExtract.TabIndex = 4;
             this.buttonExtract.Text = "Extract";
             this.buttonExtract.UseVisualStyleBackColor = true;
+            this.buttonExtract.Click += new System.EventHandler(this.buttonExtract_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(505, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 28);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(44, 78);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(196, 21);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Overwrite all existing items";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(44, 105);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(98, 21);
+            this.checkBox2.TabIndex = 7;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // Form_ExtractTo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 113);
+            this.ClientSize = new System.Drawing.Size(749, 139);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonExtract);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonChangeFolder);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelExtractTo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_ExtractTo";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Extract To...";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form_ExtractTo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -108,9 +151,12 @@
         #endregion
 
         private System.Windows.Forms.Label labelExtractTo;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button buttonChangeFolder;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonExtract;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
