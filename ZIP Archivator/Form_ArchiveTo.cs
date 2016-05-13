@@ -31,19 +31,52 @@ namespace ZIP_Archivator
             ArchiveButtonAvailability();
             errorProviderArchiveButton.BlinkStyle = ErrorBlinkStyle.AlwaysBlink;
             errorProviderChangeFolderButton.BlinkStyle = ErrorBlinkStyle.AlwaysBlink;
+
+           
+            //string dirName = new DirectoryInfo(@"E:\Temp\Text456\Text789").Name;
+            //MessageBox.Show(dirName);
+
         }
 
         // Actions if click "Change Folder" button
         private void buttonChangeFolder_Click(object sender, EventArgs e)
         {
-            folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer;
-            folderBrowserDialog.ShowDialog();
-            if (folderBrowserDialog.SelectedPath != "")
-            {
-                comboBoxFolder.Text = folderBrowserDialog.SelectedPath;
-            ValidateAndAddItemToComboBoxFolder();
-            }
-            ArchiveButtonAvailability();
+            //folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer;
+            //folderBrowserDialog.ShowDialog();
+            //if (folderBrowserDialog.SelectedPath != "")
+            //{
+            //    comboBoxFolder.Text = folderBrowserDialog.SelectedPath;
+            //ValidateAndAddItemToComboBoxFolder();
+            //}
+            //ArchiveButtonAvailability();
+
+            //Leonidc --->********************************************************************
+
+             //Show the FolderBrowserDialog.
+
+            //saveFileDialog1.ShowDialog();
+
+            DialogResult result = saveFileDialog1.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+
+                            comboBoxFolder.Text = saveFileDialog1.FileName;
+                            //ArchParameters.ArchivePathAndName= saveFileDialog1.FileName;
+
+                            //if (!fileOpened)
+                            //{
+                            //    // No file is opened, bring up openFileDialog in selected path.
+                            //    //openFileDialog1.InitialDirectory = folderName;
+                            //    //openFileDialog1.FileName = null;
+                            //    //openMenuItem.PerformClick();
+                            //}
+                        }
+
+
+            //LeonidC <---**************************************************************
+
+
+
         }
 
         // Validates and adds Path to Folders list.
@@ -60,9 +93,9 @@ namespace ZIP_Archivator
         {
             if (comboBoxFolder.Text != "")
             {
-                if (Directory.Exists(comboBoxFolder.Text))
-                {
-                    errorProviderChangeFolderButton.Clear();
+                //if (!File.Exists(comboBoxFolder.Text))
+                //{
+                //    errorProviderChangeFolderButton.Clear();
                     if (comboBoxFileName.Text != "")
                     {
                         errorProviderArchiveButton.Clear();
@@ -90,16 +123,17 @@ namespace ZIP_Archivator
                 }
                 else
                 {
-                    errorProviderChangeFolderButton.SetError(buttonChangeFolder, "Specified directory doesn't exist.");
+                    errorProviderChangeFolderButton.SetError(buttonChangeFolder, "Specified file already exist. Do you whan to overwrite?");
+
                 }
-            }
-            else
-            {
-                buttonArchive.Enabled = false;
-                errorProviderChangeFolderButton.SetIconAlignment(buttonChangeFolder, ErrorIconAlignment.MiddleRight);
-                string errorMessage = ("Path couldn't be empty.");
-                errorProviderChangeFolderButton.SetError(buttonChangeFolder, errorMessage);
-            }
+            //}
+            //else
+            //{
+            //    buttonArchive.Enabled = false;
+            //    errorProviderChangeFolderButton.SetIconAlignment(buttonChangeFolder, ErrorIconAlignment.MiddleRight);
+            //    string errorMessage = ("Path couldn't be empty.");
+            //    errorProviderChangeFolderButton.SetError(buttonChangeFolder, errorMessage);
+            //}
             return false;
         }
 
@@ -119,6 +153,17 @@ namespace ZIP_Archivator
             if (SpecifiedFieldsOK())
             {
                 // Call Zip Archivator
+                ArchParameters.ArchivePathAndName = comboBoxFolder.Text;
+                ArchivingActions.ArchCreate(ArchParameters.ItemsToArchive, ArchParameters.ArchivePathAndName);
+
+                foreach (string item in ArchParameters.ItemsToArchive)
+                {
+                    MessageBox.Show(item);
+
+                }
+
+
+
             }
         }
 
@@ -151,6 +196,38 @@ namespace ZIP_Archivator
             {
                 buttonArchive.Enabled = false;
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void comboBoxFolder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelZipPath_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxFileName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Form_ArchiveTo.ActiveForm.Close();
+            this.Close();
+          
         }
 
 
