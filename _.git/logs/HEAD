@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 db267ac53f9959d1f1fd09d44f31b84558f29fc5 Leonid <Lchechotkin@gmail.com> 1463070221 +0300	clone: from https://github.com/VitaliyKibzun/ZIP-Archivator.git
+db267ac53f9959d1f1fd09d44f31b84558f29fc5 f0daecd318fe30ed6c7784815f04d21295aa3435 Leonid <Lchechotkin@gmail.com> 1463103820 +0300	commit: LeonidC: ExtractTo logic added and some other improvements in ArchiveTo
+f0daecd318fe30ed6c7784815f04d21295aa3435 0693b06257f149c63cd4515d3997d59e0662f7ea Leonid <Lchechotkin@gmail.com> 1463103873 +0300	commit: LeonidC: additional changes to Logic

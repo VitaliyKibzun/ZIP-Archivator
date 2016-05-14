@@ -17,32 +17,52 @@ namespace ZIP_Archivator
             InitializeComponent();
         }
 
-        private void Form_ExtractTo_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void buttonChangeFolder_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog openDoialog = new OpenFileDialog();
+            
             FolderBrowserDialog folderBrowserDlg = new FolderBrowserDialog();
-            //folderBrowserDlg.ShowDialog();
+            
             DialogResult DlgResult = folderBrowserDlg.ShowDialog();
             if (DlgResult==DialogResult.OK)
             {
-                MessageBox.Show(folderBrowserDlg.SelectedPath);
                 
+                comboBox1.Text = folderBrowserDlg.SelectedPath;
             }
         }
 
         private void buttonExtract_Click(object sender, EventArgs e)
         {
-            ArchivingActions.ArchExtract(ArchParameters.ArchiveFileToExtract, ArchParameters.ArchivePathToExtract);
+
+            ArchParameters.OverwriteSilently= this.ExtractWithOverwrite.Checked;
+
+            //Perform extracting depending with ArchParameters.OverwriteSilently
+            ArchivingActions.ArchExtract(ArchParameters.ArchiveFileToExtract,comboBox1.Text) ;
+
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form_ExtractTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Form_ExtractTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

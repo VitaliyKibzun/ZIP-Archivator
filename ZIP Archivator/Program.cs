@@ -18,8 +18,5 @@ namespace ZIP_Archivator
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormZipArchivator());
         }
-
-      
-        
     }
 }

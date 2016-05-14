@@ -12,13 +12,24 @@ namespace ZIP_Archivator
 {
     class ArchivingActions
     {
-        
-        public static  void ArchCreate (List<string> filesToArchive, string archivePath)
+        // Create archive using filesToArchive and archivePath
+        public static  void ArchCreate (List<string> filesToArchive, string pathToArchive)
         
         {
-        
-         ZipFile zip = new ZipFile();
 
+          string pathInArchive=@"\"; //Path for items inside of Archive
+
+         ZipFile zip = new ZipFile();
+         //zip.AlternateEncodingUsage= true;  // utf-8
+         //zip.AlternateEncodingUsage = System.Text.Encoding.GetEncoding("utf-8");
+
+         if (ArchParameters.IncludeFullPath)
+         {
+             pathInArchive = ArchParameters.AbsolutePath;
+         }
+        
+
+         
             try
             {
                 foreach (string path in filesToArchive )
@@ -27,24 +38,16 @@ namespace ZIP_Archivator
                     if (File.Exists(path))
                     {
                         // path is a file.
-                        zip.AddItem(path);
-                        MessageBox.Show("Zipping file: " + path + "...");
+                        // MessageBox.Show("Zipping file: " + path + "...");
+                        zip.AddItem(path,pathInArchive);
+                       
                     }
                     else if (Directory.Exists(path))
                     {
-                        // path is a directory.
-                        //zip.AddDirectory(path);
-
-                        if (1 == 1) //include full path in Archive
-                        {
-                            zip.AddDirectory(path, path);
-                        }
-                        else //Don't include full path in Archive
-                        {
-                            zip.AddDirectory(path, path);
-                        }
-
-                        MessageBox.Show("Zipping Directory: " + path + "...");
+                      
+                      //  MessageBox.Show("Zipping directory: " + path + " ...");
+                        zip.AddDirectory(path + @"\", pathInArchive + new DirectoryInfo(path).Name);
+                     
                     }
                     else
                     {
@@ -58,56 +61,109 @@ namespace ZIP_Archivator
             }
             catch (Exception e)
             {
-                MessageBox.Show("Exception!!!!");
+                MessageBox.Show("You need to catch this Exception!!!!");
                 MessageBox.Show(e.ToString());
                 
             }
             finally {
-                MessageBox.Show(@archivePath);
-
-                zip.Save(@archivePath);
-                MessageBox.Show("Saved");
+                
+                // Save Archive with added files
+                zip.Save(pathToArchive);
+                MessageBox.Show("Archive created Succesfuly");
                 
             }
-        
-     
         }
+
+
+        // Extract archive using zipFileName and pathToExtract
         public static void ArchExtract ( string zipFileName, string pathToExtract)
         {
 
             if (ZipFile.CheckZip(zipFileName))
             {
-
                 try
                 {
-                    using (ZipFile zip = new ZipFile(zipFileName))
-                    {
-                        zip.ExtractExistingFile =ExtractExistingFileAction.OverwriteSilently;
-                        zip.ExtractAll(pathToExtract );
-                        
+                   // using (ZipFile zip = new ZipFile(zipFileName))
+                  {
+                    
+ 
+                        using (ZipFile zip = Ionic.Zip.ZipFile.Read(zipFileName))
+                        {
+                            if (ArchParameters.OverwriteSilently == false)
+                            {
+                                
+                                foreach (var entry in zip)
+                                {
+                                    // extract only the entries I want:
+                                    if (File.Exists(pathToExtract + @"\" + entry.FileName) || Directory.Exists(pathToExtract + @"\" + entry.FileName))
+                                    {
+                                        DialogResult result = MessageBox.Show("\""+entry.FileName.ToString()+ "\" already exists. \n Do you whant to overwrite?", 
+                                                                                "Overwriting existing files...", 
+                                                                                MessageBoxButtons.YesNoCancel, 
+                                                                                MessageBoxIcon.Exclamation, 
+                                                                                MessageBoxDefaultButton.Button1);
+
+                                        if (result == DialogResult.Yes)
+                                        {
+                                            entry.Extract(pathToExtract, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+                                        }
+                                        if (result == DialogResult.Cancel)
+                                        {
+                                            return;
+                                        }
+
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                
+                                // if ArchParameters.OverwriteSilently = true --> Do extarct with overwriting
+                                zip.ExtractExistingFile = ExtractExistingFileAction.OverwriteSilently;
+                                zip.ExtractAll(pathToExtract);
+                            }
+
+                            MessageBox.Show("Archive extracted successfuly.");
+                            
+
+
+
+                        }
+      
                     }
-
-
                 }
+
                 catch (Exception e)
                 {
-                    MessageBox.Show("Exception!!!!");
+                    MessageBox.Show("You need to catch this Exception!!!!");
                     MessageBox.Show(e.ToString());
 
                 }
-                finally
-                {
-
-
-                    MessageBox.Show("Extracted");
-
-                }
+               
             }
 
             else MessageBox.Show("Selected file is no an archive!. \n Please select archive file.");
 
         }
     
+
+        //Test Archive
+        public static bool ArchiveIsOk(string zipFileName)
+        {
+
+             if(ZipFile.IsZipFile(zipFileName))
+             {
+                 MessageBox.Show("Archive is Ok");
+                 return true;
+             }
+            else 
+             {
+                MessageBox.Show("Archive is coruptued");
+                return true;
+             }
+        }
+
+
 
     }
 }

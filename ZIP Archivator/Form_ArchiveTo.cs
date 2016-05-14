@@ -32,9 +32,6 @@ namespace ZIP_Archivator
             errorProviderArchiveButton.BlinkStyle = ErrorBlinkStyle.AlwaysBlink;
             errorProviderChangeFolderButton.BlinkStyle = ErrorBlinkStyle.AlwaysBlink;
 
-           
-            //string dirName = new DirectoryInfo(@"E:\Temp\Text456\Text789").Name;
-            //MessageBox.Show(dirName);
 
         }
 
@@ -52,9 +49,6 @@ namespace ZIP_Archivator
 
             //Leonidc --->********************************************************************
 
-             //Show the FolderBrowserDialog.
-
-            //saveFileDialog1.ShowDialog();
 
             DialogResult result = saveFileDialog1.ShowDialog();
                         if (result == DialogResult.OK)
@@ -89,82 +83,84 @@ namespace ZIP_Archivator
         }
 
         // Validates specified data on Validate button click
-        private bool SpecifiedFieldsOK()
-        {
-            if (comboBoxFolder.Text != "")
-            {
-                //if (!File.Exists(comboBoxFolder.Text))
-                //{
-                //    errorProviderChangeFolderButton.Clear();
-                    if (comboBoxFileName.Text != "")
-                    {
-                        errorProviderArchiveButton.Clear();
-                        if (!CharactersAmountOK())
-                        {
-                            errorProviderArchiveButton.SetIconAlignment(buttonArchive, ErrorIconAlignment.MiddleRight);
-                            string errorMessage = String.Format("Folder Path with filename exceed {0} characters.",
-                                maxCharactersAllowed);
-                            errorProviderArchiveButton.SetError(buttonArchive, errorMessage);
-                        }
-                        else
-                        {
-                            buttonArchive.Enabled = true;
-                            errorProviderArchiveButton.Clear();
-                            return true;
-                        }
-                    }
-                    else
-                    {
-                        buttonArchive.Enabled = false;
-                        errorProviderArchiveButton.SetIconAlignment(buttonArchive, ErrorIconAlignment.MiddleRight);
-                        string errorMessage = ("File name couldn't be empty.");
-                        errorProviderArchiveButton.SetError(buttonArchive, errorMessage);
-                    }
-                }
-                else
-                {
-                    errorProviderChangeFolderButton.SetError(buttonChangeFolder, "Specified file already exist. Do you whan to overwrite?");
+        //private bool SpecifiedFieldsOK()
+        //{
+        //    if (comboBoxFolder.Text != "")
+        //    {
+        //        //if (!File.Exists(comboBoxFolder.Text))
+        //        //{
+        //        //    errorProviderChangeFolderButton.Clear();
+        //        ////    if (comboBoxFileName.Text != "")
+        //        ////    {
+        //        ////        errorProviderArchiveButton.Clear();
+        //        ////        if (!CharactersAmountOK())
+        //        ////        {
+        //        ////            errorProviderArchiveButton.SetIconAlignment(buttonArchive, ErrorIconAlignment.MiddleRight);
+        //        ////            string errorMessage = String.Format("Folder Path with filename exceed {0} characters.",
+        //        ////                maxCharactersAllowed);
+        //        ////            errorProviderArchiveButton.SetError(buttonArchive, errorMessage);
+        //        ////        }
+        //        ////        else
+        //        ////        {
+        //        ////            buttonArchive.Enabled = true;
+        //        ////            errorProviderArchiveButton.Clear();
+        //        ////            return true;
+        //        ////        }
+        //        ////    }
+        //        ////    else
+        //        ////    {
+        //        ////        buttonArchive.Enabled = false;
+        //        ////        errorProviderArchiveButton.SetIconAlignment(buttonArchive, ErrorIconAlignment.MiddleRight);
+        //        ////        string errorMessage = ("File name couldn't be empty.");
+        //        ////        errorProviderArchiveButton.SetError(buttonArchive, errorMessage);
+        //        ////    }
+        //        ////}
+        //        ////else
+        //        ////{
+        //        ////    errorProviderChangeFolderButton.SetError(buttonChangeFolder, "Specified file already exist. Do you whan to overwrite?");
 
-                }
-            //}
-            //else
-            //{
-            //    buttonArchive.Enabled = false;
-            //    errorProviderChangeFolderButton.SetIconAlignment(buttonChangeFolder, ErrorIconAlignment.MiddleRight);
-            //    string errorMessage = ("Path couldn't be empty.");
-            //    errorProviderChangeFolderButton.SetError(buttonChangeFolder, errorMessage);
-            //}
-            return false;
-        }
+        //        ////}
+        //        //}
+        //        //else
+        //        //{
+        //        //    buttonArchive.Enabled = false;
+        //        //    errorProviderChangeFolderButton.SetIconAlignment(buttonChangeFolder, ErrorIconAlignment.MiddleRight);
+        //        //    string errorMessage = ("Path couldn't be empty.");
+        //        //    errorProviderChangeFolderButton.SetError(buttonChangeFolder, errorMessage);
+        //        //}
+        //        return false;
+        //    }
+        //    return false;
 
-        private bool CharactersAmountOK()
-        {
+        //}
+
+        //private bool CharactersAmountOK()
+        //{
             
-            string fullString = Path.Combine(comboBoxFolder.Text, "\\", comboBoxFileName.Text, ".zip");
-            if (fullString.Length <= maxCharactersAllowed)
-            {
-                return true;
-            }
-            return false;
-        }
+        //    string fullString = Path.Combine(comboBoxFolder.Text, "\\", comboBoxFileName.Text, ".zip");
+        //    if (fullString.Length <= maxCharactersAllowed)
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
 
         private void buttonArchive_Click(object sender, EventArgs e)
         {
-            if (SpecifiedFieldsOK())
-            {
-                // Call Zip Archivator
+            //if (comboBoxFolder.Text = validPath)
+            //{
+           
+
+            // Call Zip Archivator
                 ArchParameters.ArchivePathAndName = comboBoxFolder.Text;
+                
+                ArchParameters.IncludeFullPath = this.includeFullPath.Checked;
                 ArchivingActions.ArchCreate(ArchParameters.ItemsToArchive, ArchParameters.ArchivePathAndName);
 
-                foreach (string item in ArchParameters.ItemsToArchive)
-                {
-                    MessageBox.Show(item);
+            
+                this.Close();
 
-                }
-
-
-
-            }
+            //}
         }
 
         private void comboBoxFolder_TextUpdate(object sender, EventArgs e)
@@ -183,14 +179,9 @@ namespace ZIP_Archivator
             errorProviderArchiveButton.Clear();
             if (comboBoxFolder.Text != "")
             {
-                if(comboBoxFileName.Text != "")
-                {
-                    buttonArchive.Enabled = true;
-                }
-                else
-                {
-                    buttonArchive.Enabled = false;
-                }
+               
+                   buttonArchive.Enabled = true;
+                
             }
             else
             {
@@ -198,7 +189,16 @@ namespace ZIP_Archivator
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+   
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
+          
+        }
+
+        private void comboBoxFolder_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -208,27 +208,7 @@ namespace ZIP_Archivator
 
         }
 
-        private void comboBoxFolder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelZipPath_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxFileName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Form_ArchiveTo.ActiveForm.Close();
-            this.Close();
-          
-        }
+      
 
 
 

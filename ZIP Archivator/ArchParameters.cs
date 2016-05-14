@@ -9,7 +9,7 @@ namespace ZIP_Archivator
     public static class ArchParameters
     {
         //Absolute Path to Selected Files and Folders 
-        public static List<string> AbsolutePath { get; set; }
+        public static string AbsolutePath { get; set; }
 
         //Selected Files and Folders to Archive
         public static List<string> ItemsToArchive {get;set;}
@@ -25,6 +25,9 @@ namespace ZIP_Archivator
 
         //Path and Archive name to Extract
         public static bool OverwriteSilently { get; set; }
+        
+        //Include full Path to the Archive 
+        public static bool IncludeFullPath { get; set; }
 
 
         

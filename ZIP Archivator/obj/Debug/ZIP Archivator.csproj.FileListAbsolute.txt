@@ -1,24 +1,42 @@
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe.config
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csprojResolveAssemblyReference.cache
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.FormZipArchivator.resources
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Properties.Resources.resources
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csproj.GenerateResource.Cache
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.pdb
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.exe
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.pdb
-c:\users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ArchiveTo.resources
-C:\Users\vitalyki\documents\visual studio 2012\Projects\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ExtractTo.resources
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe.config
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csprojResolveAssemblyReference.cache
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.AboutBox.resources
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ExtractTo.resources
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ArchiveTo.resources
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.FormZipArchivator.resources
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Properties.Resources.resources
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csproj.GenerateResource.Cache
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.pdb
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\bin\Debug\Ionic.Zip.dll
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.exe
+C:\Users\vitalyki\Documents\Visual Studio 2012\Projects\tempNotaProject\ZIP Archivator (5) Vitaly\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.pdb
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe.config
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.exe
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.pdb
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.pdb
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\bin\Debug\Ionic.Zip.dll
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csprojResolveAssemblyReference.cache
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.AboutBox.resources
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ExtractTo.resources
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ArchiveTo.resources
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.FormZipArchivator.resources
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Properties.Resources.resources
+C:\Users\LeonidC\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csproj.GenerateResource.Cache
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe.config
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.exe
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.pdb
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.pdb
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\bin\Debug\Ionic.Zip.dll
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csprojResolveAssemblyReference.cache
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.AboutBox.resources
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ExtractTo.resources
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ArchiveTo.resources
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.FormZipArchivator.resources
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Properties.Resources.resources
+e:\Users\Lion\Documents\Visual Studio 2013\Projects\ZIP Archivator(5) L and V\ZIP Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csproj.GenerateResource.Cache
 e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe.config
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.exe
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\ZIP Archivator.pdb
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\Ionic.Zip.dll
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csprojResolveAssemblyReference.cache
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ExtractTo.resources
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Form_ArchiveTo.resources
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.FormZipArchivator.resources
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP_Archivator.Properties.Resources.resources
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.csproj.GenerateResource.Cache
 e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.exe
 e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\obj\Debug\ZIP Archivator.pdb
-e:\Users\Lion\Documents\GitHub\Projects_C#\ZIP-Archivator\ZIP Archivator\bin\Debug\Ionic.Zlib.dll
