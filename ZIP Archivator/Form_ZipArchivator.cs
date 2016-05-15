@@ -168,8 +168,20 @@ namespace ZIP_Archivator
            
             formArchiveTo = new Form_ArchiveTo();
             formArchiveTo.comboBoxFolder.Text = comboBoxAddress.Text +@"\"+ new DirectoryInfo(comboBoxAddress.Text).Name+".zip";
-           
-            formArchiveTo.ShowDialog();
+            //formArchiveTo.Parent= this;
+
+            DialogResult result = formArchiveTo.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+            {
+
+                ValidateAndOpenDirectory();
+
+            }
+            
+            //  formArchiveTo.ShowDialog();
+
+          
 
         }
 
@@ -288,8 +300,17 @@ private void buttonExtractTo_Click(object sender, EventArgs e)
         formExtractTo.comboBox1.Text = this.comboBoxAddress.Text;
 
         ArchParameters.ArchivePathToExtract = this.comboBoxAddress.Text;
-       
-        formExtractTo.ShowDialog();
+
+        DialogResult result = formExtractTo.ShowDialog();
+
+        if (result == DialogResult.Cancel)
+        {
+
+            ValidateAndOpenDirectory();
+
+        }
+
+        //formExtractTo.ShowDialog();
 
 
     }
@@ -339,7 +360,7 @@ private void buttonDelete_Click(object sender, EventArgs e)
                     }
 
                     Directory.Delete(absolutePathFile);
-            }
+                }
 
                 else
                     if (File.Exists(absolutePathFile))
@@ -352,8 +373,14 @@ private void buttonDelete_Click(object sender, EventArgs e)
                 MessageBox.Show(ex.ToString());
 
             }
+
         }
+
+        //update list of files and folders in "listViewFiles"
+        ValidateAndOpenDirectory();
     }
+
+    
 
 }
 
